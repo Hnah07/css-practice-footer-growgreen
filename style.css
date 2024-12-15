@@ -1,0 +1,170 @@
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@font-face {
+  font-family: "icomoon";
+  src: url("/fonts/icomoon.eot?ubtwpi");
+  src: url("/fonts/icomoon.eot?ubtwpi#iefix") format("embedded-opentype"),
+    url("/fonts/icomoon.ttf?ubtwpi") format("truetype"),
+    url("/fonts/icomoon.woff?ubtwpi") format("woff"),
+    url("/fonts/icomoon.svg?ubtwpi#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  /* speak: never; */
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\e900";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-youtube:before {
+  content: "\ea9d";
+}
+.icon-pinterest:before {
+  content: "\ead1";
+}
+@font-face {
+  font-family: "Ultra";
+  src: url("Ultra.ttf");
+}
+:root {
+  font-size: 62.5%;
+  --dark-green: #1a4a20;
+  --padding: 1.5rem;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 2rem;
+  background-color: var(--dark-green);
+  font-family: "Arvo", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  a {
+    text-decoration: none;
+  }
+  footer {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2.5rem var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+    min-width: 100px;
+    width: 425px;
+    height: fit-content;
+    section:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      h2 {
+        font-family: "Ultra", serif;
+        color: var(--dark-green);
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.5rem;
+        line-height: 1.7rem;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1.2rem;
+        li a i {
+          color: black;
+          &:hover {
+            color: #1a4a20;
+          }
+        }
+      }
+    }
+    section:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--padding);
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        h4 {
+          color: var(--dark-green);
+          font-size: 1.1rem;
+          font-weight: 700;
+        }
+        ul {
+          li a {
+            color: black;
+            font-size: 1rem;
+            &:hover {
+              color: #1a4a20;
+            }
+          }
+        }
+      }
+    }
+  }
+  section:nth-child(3) {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3.7rem;
+    margin-top: 3.7rem;
+    border-top: solid 1px grey;
+    flex-wrap: wrap;
+    ul {
+      display: flex;
+      gap: 2rem;
+      li a {
+        color: black;
+        &:hover {
+          color: #1a4a20;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  body {
+    footer {
+      width: 720px;
+      height: fit-content;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      section:nth-child(1) {
+        width: calc(100% - var(--padding));
+      }
+
+      section:nth-child(3) {
+        grid-column: 1/-1;
+      }
+    }
+  }
+}
